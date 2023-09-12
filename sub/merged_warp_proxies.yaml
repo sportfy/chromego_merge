@@ -38,35 +38,9 @@ proxies:
   - 1.1.1.1
   - 8.8.8.8
   dialer-proxy: WARP前置节点
-- name: 洛杉矶1
+- name: meta11
   type: vless
-  server: 45.145.72.226
-  port: 13253
-  udp: true
-  uuid: 6c2016f9-424c-4623-87e5-07214a250fee
-  tls: true
-  servername: mensura.cdn-apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: ZrryXJp6o0yseZcvtUrFr-qqTiFQrggS9-VaYad1gio
-  client-fingerprint: chrome
-- name: 洛杉矶2
-  type: vless
-  server: 108.181.22.130
-  port: 17680
-  udp: true
-  uuid: d606dfe0-267e-424f-8e0b-5dfdfbf7bc2d
-  tls: true
-  servername: download-installer.cdn.mozilla.net
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: 1u8wDSgys6gX-4qWVC9bJsRZUJk6M--SNDqgI4lIUgY
-  client-fingerprint: chrome
-- name: 洛杉矶3
-  type: vless
-  server: 108.181.18.189
+  server: 108.181.18.187
   port: 443
   udp: true
   uuid: cb26c708-2cbb-4cad-b66d-d7e39808dfad
@@ -77,44 +51,122 @@ proxies:
   reality-opts:
     public-key: ipkaULYBqXoRYrNMFDayyc_kFta1POlXisjhHbzZxy4
   client-fingerprint: chrome
-- name: 洛杉矶5
+- name: meta21
   type: vless
-  server: 45.136.245.126
-  port: 443
+  server: 108.181.22.130
+  port: 17768
   udp: true
-  uuid: 85ff3407-fe83-4c32-9ed0-787ecc720db5
+  uuid: ddf498c9-9ded-4f04-8f8c-22737e13f18a
   tls: true
-  servername: updates.cdn-apple.com
+  servername: www.lovelive-anime.jp
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: iyuVZulQDU-2txgZNn_iSv9qizc9UCw8FZqeL9pm7GA
+    public-key: yQ6_r7lGEwNA20d4wdcMtbll75rH3Hv7W74Nn_503Cs
   client-fingerprint: chrome
-- name: 洛杉矶4
+- name: meta31
   type: vless
-  server: 166.1.18.191
-  port: 443
+  server: 45.145.72.226
+  port: 15579
   udp: true
-  uuid: f7e892a9-2bf2-47eb-ad67-e2060f1051e6
+  uuid: 4ceda034-aa43-4df6-9f66-9917df25102e
   tls: true
-  servername: d1.awsstatic.com
+  servername: gateway.icloud.com
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: NciWtYa1soF85NiUzFpudo2jx3tWL8j-Q4itC6_kBjI
+    public-key: QfXEIkUSMzZ1yaotl-BvjPP9iAkv38p3rH_eT8DnjAs
   client-fingerprint: chrome
-- name: 洛杉矶6
+- name: meta41
   type: vless
-  server: 108.181.22.138
-  port: 443
+  server: 185.22.153.124
+  port: 34562
   udp: true
-  uuid: 63348f14-b4fb-4c9f-b087-a1f458283c9f
+  uuid: 1aebdc19-0794-40c8-98fd-ed4eb69aa596
   tls: true
-  servername: swcdn.apple.com
+  servername: itunes.apple.com
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: qPWdelx7FdWFEHZY0plfhYG_4CVoTgxFVH-EZe1kjhY
+    public-key: DL3tRdvx41PM2ia5va65Arz9iadqDgF9DXbfpuYa-Qc
+  client-fingerprint: chrome
+- name: meta51
+  type: vless
+  server: 45.145.72.227
+  port: 14169
+  udp: true
+  uuid: 01f0b154-261a-436b-9ea9-c0eb70b401ff
+  tls: true
+  servername: addons.mozilla.org
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: ggobXk3UxEjkGDGEC7_6ih5HpwuA8fafIDvFfuWUGS8
+  client-fingerprint: chrome
+- name: meta61
+  type: vless
+  server: 108.181.22.139
+  port: 10982
+  udp: true
+  uuid: 3f4c685d-23c8-4236-8c72-598f36c89930
+  tls: true
+  servername: www.nokia.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: S6ycbWYBM6WB-5SzRQSwVTFHF6v4BUHQf0Rus5B7KG0
+  client-fingerprint: chrome
+- name: meta71
+  type: vless
+  server: 45.150.165.61
+  port: 15967
+  udp: true
+  uuid: c4ca3219-2e93-435f-98d6-c1bb314193fc
+  tls: true
+  servername: www.lovelive-anime.jp
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: DLZ9UW94ANwhyvB6hrEGZgRgqTdqN6Lobxh54ksIn1Y
+  client-fingerprint: chrome
+- name: meta81
+  type: vless
+  server: 45.150.165.61
+  port: 15967
+  udp: true
+  uuid: c4ca3219-2e93-435f-98d6-c1bb314193fc
+  tls: true
+  servername: www.lovelive-anime.jp
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: DLZ9UW94ANwhyvB6hrEGZgRgqTdqN6Lobxh54ksIn1Y
+  client-fingerprint: chrome
+- name: meta91
+  type: vless
+  server: 45.150.165.61
+  port: 15967
+  udp: true
+  uuid: c4ca3219-2e93-435f-98d6-c1bb314193fc
+  tls: true
+  servername: www.lovelive-anime.jp
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: DLZ9UW94ANwhyvB6hrEGZgRgqTdqN6Lobxh54ksIn1Y
+  client-fingerprint: chrome
+- name: meta101
+  type: vless
+  server: 45.150.165.61
+  port: 15967
+  udp: true
+  uuid: c4ca3219-2e93-435f-98d6-c1bb314193fc
+  tls: true
+  servername: www.lovelive-anime.jp
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: DLZ9UW94ANwhyvB6hrEGZgRgqTdqN6Lobxh54ksIn1Y
   client-fingerprint: chrome
 - name: hysteria0
   type: hysteria
@@ -202,17 +254,17 @@ proxies:
     short-id: ''
 - name: reality2
   type: vless
-  server: 185.22.153.195
-  port: 443
-  uuid: 2c7e86af-9fa9-456c-a1a2-22fefa6cb2ca
+  server: 45.129.2.15
+  port: 24515
+  uuid: 5e4efe94-b4f5-47d7-bc12-f1f1e4ef7f72
   network: tcp
   tls: true
   udp: true
   flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: osxapps.itunes.apple.com
+  servername: mensura.cdn-apple.com
   reality-opts:
-    public-key: jLzBerhjXZGmQRCEWFFuc8CCo6c4Zv03iWc0OxWMl0M
+    public-key: HMlkLQGbE-XvrwExv46WToHNmkg8o_XQ5UsKZ_E09DA
     short-id: ''
 - name: reality3
   type: vless
@@ -251,12 +303,16 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 油管-绵阿羊
-  - 洛杉矶1
-  - 洛杉矶2
-  - 洛杉矶3
-  - 洛杉矶5
-  - 洛杉矶4
-  - 洛杉矶6
+  - meta11
+  - meta21
+  - meta31
+  - meta41
+  - meta51
+  - meta61
+  - meta71
+  - meta81
+  - meta91
+  - meta101
   - hysteria0
   - hysteria1
   - hysteria2
@@ -269,12 +325,16 @@ proxy-groups:
   type: select
   proxies:
   - 油管-绵阿羊
-  - 洛杉矶1
-  - 洛杉矶2
-  - 洛杉矶3
-  - 洛杉矶5
-  - 洛杉矶4
-  - 洛杉矶6
+  - meta11
+  - meta21
+  - meta31
+  - meta41
+  - meta51
+  - meta61
+  - meta71
+  - meta81
+  - meta91
+  - meta101
   - hysteria0
   - hysteria1
   - hysteria2
@@ -287,12 +347,16 @@ proxy-groups:
   type: load-balance
   proxies:
   - 油管-绵阿羊
-  - 洛杉矶1
-  - 洛杉矶2
-  - 洛杉矶3
-  - 洛杉矶5
-  - 洛杉矶4
-  - 洛杉矶6
+  - meta11
+  - meta21
+  - meta31
+  - meta41
+  - meta51
+  - meta61
+  - meta71
+  - meta81
+  - meta91
+  - meta101
   - hysteria0
   - hysteria1
   - hysteria2
