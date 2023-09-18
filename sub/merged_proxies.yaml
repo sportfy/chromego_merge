@@ -20,98 +20,91 @@ proxies:
   udp: true
   sni: gw.alicdn.com
   skip-cert-verify: true
-- name: mhysteria01
+- name: mvless01
+  type: vless
+  server: 108.181.22.132
+  port: 20397
+  udp: true
+  uuid: bd820dc9-be97-44ea-91e2-e95aeff0a13f
+  tls: true
+  servername: swdist.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: 3VV2JfX6nC4POM8ciU-fi71lI5qdSqP6CNPwJOwBbA8
+  client-fingerprint: chrome
+- name: mvless11
+  type: vless
+  server: www.dtku49.xyz
+  port: 20721
+  udp: true
+  uuid: 0ee5a0c0-2047-4525-ad7c-265b0c497496
+  tls: true
+  servername: aod.itunes.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: IniBg-mAOXGUbAZ74nm0NJIUwMyJzfwUCtS6ZMawUmY
+  client-fingerprint: chrome
+- name: mhysteria21
   type: hysteria
-  server: 108.181.22.131
-  port: 32296
-  34500-34600: null
-  sni: qq.com
+  server: 108.181.22.132
+  port: 53352
+  12000-13000: null
+  sni: brave.com
   skip-cert-verify: true
   alpn:
   - h3
   protocol: udp
-  auth_str: VZENlctKGivNmryU7Rb4spM8gBf7snyrA1NLfLHeM9roGWaEgS
+  auth_str: LjkWEh76iGmvmECQoT6N1CFflDogah4gcYTQZuAeSN2HNUsjRN
   up: 30
   down: 80
-  hop_interval: 600
-- name: mvless11
-  type: vless
-  server: www.dtku49.xyz
-  port: 18113
-  udp: true
-  uuid: 1a66f4f9-00b8-460e-b02e-17b2eaa9eae5
-  tls: true
-  servername: s0.awsstatic.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: tCyy6NnNNay5yqWTaotWm53q-STtoHdBpjqH9OxXOmE
-  client-fingerprint: chrome
-- name: mvless21
-  type: vless
-  server: www.dtku50.xyz
-  port: 20055
-  udp: true
-  uuid: 1630fbac-241f-4bc1-a28b-f32c79104c67
-  tls: true
-  servername: updates.cdn-apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: 2AHqzptm5IQJ3Tgpiwz0Hu4HSboguKVIZl4BCY0DGGI
-  client-fingerprint: chrome
+  hop_interval: 150
 - name: mvless31
   type: vless
-  server: www.dtku50.xyz
-  port: 20055
+  server: 108.181.22.130
+  port: 19011
   udp: true
-  uuid: 1630fbac-241f-4bc1-a28b-f32c79104c67
+  uuid: 5ee73951-3411-4ebb-b1d2-456a1c376dbd
   tls: true
-  servername: updates.cdn-apple.com
+  servername: addons.mozilla.org
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: 2AHqzptm5IQJ3Tgpiwz0Hu4HSboguKVIZl4BCY0DGGI
+    public-key: B-S59zqB3X0BXgmxJud3GgAwOp3DiSJ-W3Pt2gco2zY
   client-fingerprint: chrome
 - name: mvless41
   type: vless
-  server: www.dtku49.xyz
-  port: 18113
+  server: 108.181.22.130
+  port: 19011
   udp: true
-  uuid: 1a66f4f9-00b8-460e-b02e-17b2eaa9eae5
+  uuid: 5ee73951-3411-4ebb-b1d2-456a1c376dbd
   tls: true
-  servername: s0.awsstatic.com
+  servername: addons.mozilla.org
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: tCyy6NnNNay5yqWTaotWm53q-STtoHdBpjqH9OxXOmE
+    public-key: B-S59zqB3X0BXgmxJud3GgAwOp3DiSJ-W3Pt2gco2zY
   client-fingerprint: chrome
-- name: mtuic51
-  type: tuic
-  server: tuic1.cfcdn3.xyz
-  port: 65016
-  udp: true
-  uuid: 157c060e-7289-4fed-9154-00636029e064
-  password: 157c060e-7289-4fed-9154-00636029e064
-  alpn:
-  - h3
-  disable-sni: true
-  reduce-rtt: true
-  udp-relay-mode: native
-  congestion-controller: bbr
-- name: mvless61
+- name: mvless51
   type: vless
-  server: www.dtku49.xyz
-  port: 18113
+  server: 108.181.22.130
+  port: 19011
   udp: true
-  uuid: 1a66f4f9-00b8-460e-b02e-17b2eaa9eae5
+  uuid: 5ee73951-3411-4ebb-b1d2-456a1c376dbd
   tls: true
-  servername: s0.awsstatic.com
+  servername: addons.mozilla.org
   flow: xtls-rprx-vision
   network: tcp
   reality-opts:
-    public-key: tCyy6NnNNay5yqWTaotWm53q-STtoHdBpjqH9OxXOmE
+    public-key: B-S59zqB3X0BXgmxJud3GgAwOp3DiSJ-W3Pt2gco2zY
   client-fingerprint: chrome
+- name: mss61
+  type: ss
+  server: www.dtku49.xyz
+  port: 10088
+  password: dongtaiwang.com
+  cipher: aes-256-gcm
 - name: mhysteria71
   type: hysteria
   server: www.dtku50.xyz
@@ -137,19 +130,12 @@ proxies:
   reality-opts:
     public-key: sJsSZcA2DyAHDTcoe8Utbz9JaXJPMVmtHmiXxWmcExc
   client-fingerprint: chrome
-- name: mvless91
-  type: vless
+- name: mss91
+  type: ss
   server: www.dtku49.xyz
-  port: 18113
-  udp: true
-  uuid: 1a66f4f9-00b8-460e-b02e-17b2eaa9eae5
-  tls: true
-  servername: s0.awsstatic.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: tCyy6NnNNay5yqWTaotWm53q-STtoHdBpjqH9OxXOmE
-  client-fingerprint: chrome
+  port: 10088
+  password: dongtaiwang.com
+  cipher: aes-256-gcm
 - name: hysteria0
   type: hysteria
   server: 167.160.91.115
@@ -269,16 +255,16 @@ proxy-groups:
   - 自动选择
   - DIRECT
   - 油管-绵阿羊
-  - mhysteria01
+  - mvless01
   - mvless11
-  - mvless21
+  - mhysteria21
   - mvless31
   - mvless41
-  - mtuic51
-  - mvless61
+  - mvless51
+  - mss61
   - mhysteria71
   - mvless81
-  - mvless91
+  - mss91
   - hysteria0
   - hysteria1
   - hysteria2
@@ -294,16 +280,16 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 油管-绵阿羊
-  - mhysteria01
+  - mvless01
   - mvless11
-  - mvless21
+  - mhysteria21
   - mvless31
   - mvless41
-  - mtuic51
-  - mvless61
+  - mvless51
+  - mss61
   - mhysteria71
   - mvless81
-  - mvless91
+  - mss91
   - hysteria0
   - hysteria1
   - hysteria2
