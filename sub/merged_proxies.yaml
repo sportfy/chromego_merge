@@ -1,16 +1,29 @@
-mixed-port: 7890
-allow-lan: false
+port: 7890
+allow-lan: true
+mode: rule
 log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
 dns:
-  enabled: true
-  nameserver:
-  - 119.29.29.29
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
   - 223.5.5.5
-  fallback:
   - 8.8.8.8
-  - 8.8.4.4
-  - tls://1.0.0.1:853
-  - tls://dns.google:853
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  fallback:
+  - https://1.0.0.1/dns-query
+  - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+    - 240.0.0.0/4
 proxies:
 - name: 油管-绵阿羊
   type: trojan
@@ -20,85 +33,96 @@ proxies:
   udp: true
   sni: gw.alicdn.com
   skip-cert-verify: true
-- name: mvless01
-  type: vless
-  server: 108.181.22.132
-  port: 20397
-  udp: true
-  uuid: bd820dc9-be97-44ea-91e2-e95aeff0a13f
-  tls: true
-  servername: swdist.apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: 3VV2JfX6nC4POM8ciU-fi71lI5qdSqP6CNPwJOwBbA8
-  client-fingerprint: chrome
-- name: mvless11
-  type: vless
-  server: www.dtku49.xyz
-  port: 20721
-  udp: true
-  uuid: 0ee5a0c0-2047-4525-ad7c-265b0c497496
-  tls: true
-  servername: aod.itunes.apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: IniBg-mAOXGUbAZ74nm0NJIUwMyJzfwUCtS6ZMawUmY
-  client-fingerprint: chrome
-- name: mhysteria21
-  type: hysteria
-  server: 108.181.22.132
-  port: 53352
-  12000-13000: null
-  sni: brave.com
+- name: mvmess01
+  type: vmess
+  server: dongtaiwang2.com
+  port: 8080
+  cipher: auto
+  uuid: 252f9ec7-42e8-4c66-9a41-673d9b8e6799
+  alterId: 0
+  tls: false
   skip-cert-verify: true
-  alpn:
-  - h3
-  protocol: udp
-  auth_str: LjkWEh76iGmvmECQoT6N1CFflDogah4gcYTQZuAeSN2HNUsjRN
-  up: 30
-  down: 80
-  hop_interval: 150
-- name: mvless31
-  type: vless
-  server: 108.181.22.130
-  port: 19011
-  udp: true
-  uuid: 5ee73951-3411-4ebb-b1d2-456a1c376dbd
-  tls: true
-  servername: addons.mozilla.org
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: B-S59zqB3X0BXgmxJud3GgAwOp3DiSJ-W3Pt2gco2zY
-  client-fingerprint: chrome
-- name: mvless41
-  type: vless
-  server: 108.181.22.130
-  port: 19011
-  udp: true
-  uuid: 5ee73951-3411-4ebb-b1d2-456a1c376dbd
-  tls: true
-  servername: addons.mozilla.org
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: B-S59zqB3X0BXgmxJud3GgAwOp3DiSJ-W3Pt2gco2zY
-  client-fingerprint: chrome
-- name: mvless51
-  type: vless
-  server: 108.181.22.130
-  port: 19011
-  udp: true
-  uuid: 5ee73951-3411-4ebb-b1d2-456a1c376dbd
-  tls: true
-  servername: addons.mozilla.org
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: B-S59zqB3X0BXgmxJud3GgAwOp3DiSJ-W3Pt2gco2zY
-  client-fingerprint: chrome
+  servername: ''
+  network: ws
+  ws-opts:
+    path: /lR4PxFLn/
+    headers:
+      host: cf1.freek1.xyz
+- name: mvmess11
+  type: vmess
+  server: dongtaiwang3.com
+  port: 8880
+  cipher: auto
+  uuid: 208d8c18-4f63-4013-bd67-a39f62301132
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: ''
+  network: ws
+  ws-opts:
+    path: /YGhTwaEU/
+    headers:
+      host: cf1.freeh1.xyz
+- name: mvmess21
+  type: vmess
+  server: www.dongtaiwang2.com
+  port: 8080
+  cipher: auto
+  uuid: 252f9ec7-42e8-4c66-9a41-673d9b8e6799
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: ''
+  network: ws
+  ws-opts:
+    path: /lR4PxFLn/
+    headers:
+      host: cf1.freek1.xyz
+- name: mvmess31
+  type: vmess
+  server: upload.yunzhongzhuan.com
+  port: 8880
+  cipher: auto
+  uuid: 208d8c18-4f63-4013-bd67-a39f62301132
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: ''
+  network: ws
+  ws-opts:
+    path: /YGhTwaEU/
+    headers:
+      host: cf1.freeh1.xyz
+- name: mvmess41
+  type: vmess
+  server: download.yunzhongzhuan.com
+  port: 8880
+  cipher: auto
+  uuid: 208d8c18-4f63-4013-bd67-a39f62301132
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: ''
+  network: ws
+  ws-opts:
+    path: /YGhTwaEU/
+    headers:
+      host: cf1.freeh1.xyz
+- name: mvmess51
+  type: vmess
+  server: 162.159.136.160
+  port: 8080
+  cipher: auto
+  uuid: c0d40e10-c828-4ea4-8494-56067cbbbc5e
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: ''
+  network: ws
+  ws-opts:
+    path: /BR7cUfTm/
+    headers:
+      host: cf2.freek1.xyz
 - name: mss61
   type: ss
   server: www.dtku49.xyz
@@ -192,48 +216,6 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: reality0
-  type: vless
-  server: 173.234.25.51
-  port: 29295
-  uuid: 9e2626df-3467-4393-9f7c-aaca6fe4336c
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: m.media-amazon.com
-  reality-opts:
-    public-key: LN86WNkTPKjU0rSHPg1X7TGZy1ba9vGwnt_MukdZOB8
-    short-id: ''
-- name: reality1
-  type: vless
-  server: 108.181.22.140
-  port: 23694
-  uuid: 024fcb50-d42c-47b4-8662-329e7b50b748
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: mensura.cdn-apple.com
-  reality-opts:
-    public-key: Pjgg-A89G4QbXUjFhoNCOyUxR-jcvnn64lSo1XYZqnE
-    short-id: ''
-- name: reality2
-  type: vless
-  server: www.dtku48.xyz
-  port: 17759
-  uuid: 172e24f4-850b-4adb-8ec0-1731a5716061
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.lovelive-anime.jp
-  reality-opts:
-    public-key: 2P5dOmsucY_VbyfkmfZkk_azSfA9e8Tua2MyVe5K6n4
-    short-id: ''
 - name: reality3
   type: vless
   server: 108.181.22.140
@@ -255,12 +237,12 @@ proxy-groups:
   - 自动选择
   - DIRECT
   - 油管-绵阿羊
-  - mvless01
-  - mvless11
-  - mhysteria21
-  - mvless31
-  - mvless41
-  - mvless51
+  - mvmess01
+  - mvmess11
+  - mvmess21
+  - mvmess31
+  - mvmess41
+  - mvmess51
   - mss61
   - mhysteria71
   - mvless81
@@ -269,9 +251,6 @@ proxy-groups:
   - hysteria1
   - hysteria2
   - hysteria3
-  - reality0
-  - reality1
-  - reality2
   - reality3
 - name: 自动选择
   type: url-test
@@ -280,12 +259,12 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 油管-绵阿羊
-  - mvless01
-  - mvless11
-  - mhysteria21
-  - mvless31
-  - mvless41
-  - mvless51
+  - mvmess01
+  - mvmess11
+  - mvmess21
+  - mvmess31
+  - mvmess41
+  - mvmess51
   - mss61
   - mhysteria71
   - mvless81
@@ -294,9 +273,6 @@ proxy-groups:
   - hysteria1
   - hysteria2
   - hysteria3
-  - reality0
-  - reality1
-  - reality2
   - reality3
 rule-providers:
   reject:
