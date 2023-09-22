@@ -51,101 +51,58 @@ proxies:
   - 1.1.1.1
   - 8.8.8.8
   dialer-proxy: WARP前置节点
-- name: mvless01
-  type: vless
-  server: dongtaiwang2.com
-  port: 443
-  uuid: 6bd2d2f3-ac76-4a48-93c0-8e58154a03d9
-  tls: true
-  servername: cf108.freek1.xyz
-  network: ws
-  ws-opts:
-    path: /xjefws
-    headers:
-      host: cf108.freek1.xyz
-  client-fingerprint: chrome
-- name: mvmess11
-  type: vmess
-  server: dongtaiwang2.com
-  port: 443
-  cipher: auto
-  uuid: d70c4505-c9d7-44c4-a1ff-98a0bc7ebdd3
-  alterId: 0
-  tls: true
-  skip-cert-verify: true
-  servername: ''
-  network: ws
-  ws-opts:
-    path: /dongtaiwang.com
-    headers:
-      host: d.freeh1.xyz
-- name: mvless21
-  type: vless
-  server: v4.cfnode.eu.org
-  port: 443
-  uuid: 6bd2d2f3-ac76-4a48-93c0-8e58154a03d9
-  tls: true
-  servername: cf108.freek1.xyz
-  network: ws
-  ws-opts:
-    path: /xjefws
-    headers:
-      host: cf108.freek1.xyz
-  client-fingerprint: chrome
-- name: mvless31
-  type: vless
-  server: download.yunzhongzhuan.com
-  port: 443
-  uuid: 6bd2d2f3-ac76-4a48-93c0-8e58154a03d9
-  tls: true
-  servername: cf108.freek1.xyz
-  network: ws
-  ws-opts:
-    path: /xjefws
-    headers:
-      host: cf108.freek1.xyz
-  client-fingerprint: chrome
-- name: mvmess41
-  type: vmess
-  server: download.yunzhongzhuan.com
-  port: 443
-  cipher: auto
-  uuid: d70c4505-c9d7-44c4-a1ff-98a0bc7ebdd3
-  alterId: 0
-  tls: true
-  skip-cert-verify: true
-  servername: ''
-  network: ws
-  ws-opts:
-    path: /dongtaiwang.com
-    headers:
-      host: d.freeh1.xyz
-- name: mvless51
-  type: vless
-  server: www.dongtaiwang2.com
-  port: 443
-  uuid: 6bd2d2f3-ac76-4a48-93c0-8e58154a03d9
-  tls: true
-  servername: cf108.freek1.xyz
-  network: ws
-  ws-opts:
-    path: /xjefws
-    headers:
-      host: cf108.freek1.xyz
-  client-fingerprint: chrome
-- name: mvless61
-  type: vless
-  server: www.dtku49.xyz
-  port: 18514
-  udp: true
-  uuid: 69521861-80c5-4bc9-aaf1-aaaac63a1ca2
-  tls: true
-  servername: mensura.cdn-apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: 0O8GlvlpcXl40QMMtnB87rnntF0VOcxyYjBFF5C-TGo
-  client-fingerprint: chrome
+- name: mss01
+  type: ss
+  server: 108.181.22.130
+  port: 19117
+  password: VDKCjVeRIFcIXRQ6vPutZQ==
+  cipher: 2022-blake3-aes-128-gcm
+- name: mssr11
+  type: ssr
+  server: 108.181.22.133
+  port: 30001
+  password: dongtaiwang.com
+  cipher: dummy
+  obfs: plain
+  protocol: auth_chain_a
+- name: mssr21
+  type: ssr
+  server: 108.181.22.133
+  port: 30001
+  password: dongtaiwang.com
+  cipher: dummy
+  obfs: plain
+  protocol: auth_chain_a
+- name: mssr31
+  type: ssr
+  server: 108.181.22.133
+  port: 30001
+  password: dongtaiwang.com
+  cipher: dummy
+  obfs: plain
+  protocol: auth_chain_a
+- name: mssr41
+  type: ssr
+  server: 108.181.22.133
+  port: 30001
+  password: dongtaiwang.com
+  cipher: dummy
+  obfs: plain
+  protocol: auth_chain_a
+- name: mssr51
+  type: ssr
+  server: 108.181.22.133
+  port: 30001
+  password: dongtaiwang.com
+  cipher: dummy
+  obfs: plain
+  protocol: auth_chain_a
+- name: mss61
+  type: ss
+  server: www2.dtku49.xyz
+  port: 11105
+  password: thqfFCl0zl4Wyc0FaKxTQw==
+  cipher: 2022-blake3-aes-128-gcm
 - name: mhysteria71
   type: hysteria
   server: www.dtku50.xyz
@@ -171,19 +128,12 @@ proxies:
   reality-opts:
     public-key: sJsSZcA2DyAHDTcoe8Utbz9JaXJPMVmtHmiXxWmcExc
   client-fingerprint: chrome
-- name: mvless91
-  type: vless
+- name: mss91
+  type: ss
   server: www.dtku49.xyz
-  port: 18514
-  udp: true
-  uuid: 69521861-80c5-4bc9-aaf1-aaaac63a1ca2
-  tls: true
-  servername: mensura.cdn-apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: 0O8GlvlpcXl40QMMtnB87rnntF0VOcxyYjBFF5C-TGo
-  client-fingerprint: chrome
+  port: 10382
+  password: c6WFCUqSAe/otYPfVUve3lK6LIjyge3A+s9GST7QQ+c=
+  cipher: 2022-blake3-aes-256-gcm
 - name: hysteria0
   type: hysteria
   server: 167.160.91.115
@@ -254,20 +204,6 @@ proxies:
   reality-opts:
     public-key: Pjgg-A89G4QbXUjFhoNCOyUxR-jcvnn64lSo1XYZqnE
     short-id: ''
-- name: reality3
-  type: vless
-  server: 108.181.22.140
-  port: 23694
-  uuid: 024fcb50-d42c-47b4-8662-329e7b50b748
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: mensura.cdn-apple.com
-  reality-opts:
-    public-key: Pjgg-A89G4QbXUjFhoNCOyUxR-jcvnn64lSo1XYZqnE
-    short-id: ''
 proxy-groups:
 - name: 节点选择
   type: select
@@ -291,62 +227,59 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 油管-绵阿羊
-  - mvless01
-  - mvmess11
-  - mvless21
-  - mvless31
-  - mvmess41
-  - mvless51
-  - mvless61
+  - mss01
+  - mssr11
+  - mssr21
+  - mssr31
+  - mssr41
+  - mssr51
+  - mss61
   - mhysteria71
   - mvless81
-  - mvless91
+  - mss91
   - hysteria0
   - hysteria1
   - hysteria2
   - hysteria3
   - reality0
-  - reality3
 - name: 手动选择
   type: select
   proxies:
   - 油管-绵阿羊
-  - mvless01
-  - mvmess11
-  - mvless21
-  - mvless31
-  - mvmess41
-  - mvless51
-  - mvless61
+  - mss01
+  - mssr11
+  - mssr21
+  - mssr31
+  - mssr41
+  - mssr51
+  - mss61
   - mhysteria71
   - mvless81
-  - mvless91
+  - mss91
   - hysteria0
   - hysteria1
   - hysteria2
   - hysteria3
   - reality0
-  - reality3
 - name: 负载均衡
   type: load-balance
   proxies:
   - 油管-绵阿羊
-  - mvless01
-  - mvmess11
-  - mvless21
-  - mvless31
-  - mvmess41
-  - mvless51
-  - mvless61
+  - mss01
+  - mssr11
+  - mssr21
+  - mssr31
+  - mssr41
+  - mssr51
+  - mss61
   - mhysteria71
   - mvless81
-  - mvless91
+  - mss91
   - hysteria0
   - hysteria1
   - hysteria2
   - hysteria3
   - reality0
-  - reality3
   url: http://www.gstatic.com/generate_204
   interval: 300
   strategy: round-robin
