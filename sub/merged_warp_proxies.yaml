@@ -142,12 +142,19 @@ proxies:
   reality-opts:
     public-key: sJsSZcA2DyAHDTcoe8Utbz9JaXJPMVmtHmiXxWmcExc
   client-fingerprint: chrome
-- name: mss91
-  type: ss
-  server: www.dtku49.xyz
-  port: 10382
-  password: c6WFCUqSAe/otYPfVUve3lK6LIjyge3A+s9GST7QQ+c=
-  cipher: 2022-blake3-aes-256-gcm
+- name: mtuic91
+  type: tuic
+  server: tuic1.dtku47.xyz
+  port: 23788
+  udp: true
+  uuid: ae02b441-c64b-46d3-bdc4-c0f578b1db22
+  password: xLDZTVuo3cjI
+  alpn:
+  - h3
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
 - name: hysteria0
   type: hysteria
   server: 167.160.91.115
@@ -204,6 +211,38 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
+- name: hysteria20
+  type: hysteria2
+  server: 108.181.22.155
+  port: 48152
+  password: 8eb5dcd9
+  fast-open: true
+  sni: www.bing.com
+  skip-cert-verify: true
+- name: hysteria21
+  type: hysteria2
+  server: 167.160.90.252
+  port: 60930
+  password: fc4488ef
+  fast-open: true
+  sni: www.bing.com
+  skip-cert-verify: true
+- name: hysteria22
+  type: hysteria2
+  server: www2.dtku49.xyz
+  port: 54406
+  password: ebcbb37b
+  fast-open: true
+  sni: www.bing.com
+  skip-cert-verify: true
+- name: hysteria23
+  type: hysteria2
+  server: www.dtku48.xyz
+  port: 50411
+  password: abab0600
+  fast-open: true
+  sni: www.bing.com
+  skip-cert-verify: true
 - name: reality1
   type: vless
   server: 108.181.22.140
@@ -250,11 +289,15 @@ proxy-groups:
   - mss61
   - mhysteria71
   - mvless81
-  - mss91
+  - mtuic91
   - hysteria0
   - hysteria1
   - hysteria2
   - hysteria3
+  - hysteria20
+  - hysteria21
+  - hysteria22
+  - hysteria23
   - reality1
 - name: 手动选择
   type: select
@@ -269,11 +312,15 @@ proxy-groups:
   - mss61
   - mhysteria71
   - mvless81
-  - mss91
+  - mtuic91
   - hysteria0
   - hysteria1
   - hysteria2
   - hysteria3
+  - hysteria20
+  - hysteria21
+  - hysteria22
+  - hysteria23
   - reality1
 - name: 负载均衡
   type: load-balance
@@ -288,11 +335,15 @@ proxy-groups:
   - mss61
   - mhysteria71
   - mvless81
-  - mss91
+  - mtuic91
   - hysteria0
   - hysteria1
   - hysteria2
   - hysteria3
+  - hysteria20
+  - hysteria21
+  - hysteria22
+  - hysteria23
   - reality1
   url: http://www.gstatic.com/generate_204
   interval: 300
