@@ -79,43 +79,51 @@ def process_clash(data, index):
                     server = proxy["server"]
                     port = proxy["port"]
                     udp = proxy["udp"]
-                    uuid = proxy['uuid']
-                    password = proxy['password']
-                    alpn = proxy["alpn"][0]
-                    #disable_sni = proxy["disable-sni"]
-                    udp_relay_mode = proxy['udp-relay-mode']
-                    congestion =   proxy['congestion-controller']
-                    tuic_meta = f"tuic://{server}:{port}?uuid={uuid}&version=5&password={password}&insecure=1&alpn={alpn}&mode={udp_relay_mode}"
+                    uuid = proxy.get("uuid", "")
+                    password = proxy.get("password", "")
+                    sni = proxy.get("sni", "")
+                    insecure = int(proxy.get("skip-cert-verify", 0))
+                    udp_relay_mode = proxy.get("udp-relay-mode", "bbr")
+                    congestion = proxy.get("congestion-controller", "")
+                    tuic_meta = f"tuic://{server}:{port}?uuid={uuid}&version=5&password={password}&insecure={insecure}&alpn={alpn}&mode={udp_relay_mode}"
+                    
                     merged_proxies.append(tuic_meta)
                     merged_proxies_neko.append(tuic_meta)
+                elif proxy['type'] == "hysteria2":
+                    server = proxy["server"]
+                    port = proxy["port"]
+                    auth = proxy.get("password", "")
+                    sni = proxy.get("sni", "")
+                    insecure = int(proxy.get("skip-cert-verify", 0))
+                    hy2_meta = f"hysteria2://{auth}@{server}:{port}?insecure={insecure}&sni={sni}#hysteria2_meta_{index}"
+                    merged_proxies.append(hy2_meta)
+                    merged_proxies_neko.append(hy2_meta)
                 elif proxy['type'] == 'hysteria':
                     server = proxy["server"]           
                     mport = str(proxy["port"])
                     ports = mport.split(",")
                     port = int(ports[0])
-                    protocol = proxy["protocol"]
-                    # up_mbps = proxy["up"]
-                    # down_mbps = proxy["down"]
+                    protocol = proxy.get("protocol", "udp")
                     up_mbps = 50
                     down_mbps = 80                   
-                    alpn = proxy["alpn"][0]
-                    obfs = ""
-                    insecure = int(proxy["skip-cert-verify"])
-                    server_name = proxy["sni"]
-                    fast_open = 1
-                    auth = proxy["auth_str"]
+                    alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy["alpn"]) > 0 else None
+                    obfs = proxy.get("obfs", "")
+                    insecure = int(proxy.get("skip-cert-verify", 0))
+                    sni = proxy.get("sni", "")
+                    fast_open = int(proxy.get("fast_open", 1))
+                    auth = proxy.get("auth-str", "")
                     # 生成URL
-                    hysteria_meta = f"hysteria://{server}:{port}?peer={server_name}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={mport}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}#hysteria{index}"
+                    hysteria_meta = f"hysteria://{server}:{port}?peer={sni}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={mport}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}#hysteria{index}"
                     merged_proxies.append(hysteria_meta)
                     merged_proxies_neko.append(hysteria_meta)
                 elif proxy['type'] == 'ssr':
                     server = proxy["server"]           
                     port = proxy["port"]
-                    password = proxy["password"]
+                    password = proxy.get("password", "")
                     password = base64.b64encode(password.encode()).decode()
-                    cipher = proxy["cipher"]
-                    obfs = proxy["obfs"]
-                    protocol = proxy["protocol"]
+                    cipher = proxy.get("cipher", "")
+                    obfs = proxy.get("obfs", "")
+                    protocol = proxy.get("protocol", "")
 
                     # 生成URL
                     ssr_source=f"{server}:{port}:{protocol}:{cipher}:{obfs}:{password}/?remarks=&protoparam=&obfsparam="
@@ -151,7 +159,7 @@ def process_shadowtls(data, index):
         server_port = json_data["outbounds"][1]["server_port"]
         method = json_data["outbounds"][0]["method"]
         password = json_data["outbounds"][0]["password"]
-        version = "1"
+        version = int(json_data["outbounds"][1]["version"])
         host = json_data["outbounds"][1]["tls"]["server_name"]
         ss = f"{method}:{password}@{server}:{server_port}"
         shadowtls = f'{{"version": "{version}", "host": "{host}"}}'
@@ -199,7 +207,7 @@ def process_hysteria2(data, index):
         # 生成URL
         hysteria2 = f"hysteria2://{auth}@{server}?insecure={insecure}&sni={sni}#hysteria2_{index}"
         merged_proxies_neko.append(hysteria2)
-
+        merged_proxies.append(hysteria2)
     except Exception as e:
         logging.error(f"Error processing hysteria2 data for index {index}: {e}")
 
@@ -254,7 +262,7 @@ def update_warp_proxy_groups(config_warp_data, merged_proxies):
 merged_proxies = []
 merged_proxies_neko = []
 # 处理 clash URLs
-process_urls('./urls/clash_urls.txt', process_clash)
+process_urls('./urls/clash_new_urls.txt', process_clash)
 
 # 处理 shadowtls URLs
 process_urls('./urls/shadowtls_urls.txt', process_shadowtls)
