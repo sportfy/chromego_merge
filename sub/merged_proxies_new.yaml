@@ -101,67 +101,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: meta_hysteria_61
-  type: hysteria
-  server: hy2.dtku47.xyz
-  port: 15566
-  auth-str: jQrGpwSqp34P
-  alpn:
-  - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_hysteria_71
-  type: hysteria
-  server: clash1.dtku47.xyz
-  port: 11223
-  auth-str: O5tQQiW2xKf5
-  alpn:
-  - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_hysteria_81
-  type: hysteria
-  server: hy2.dtku47.xyz
-  port: 15566
-  auth-str: jQrGpwSqp34P
-  alpn:
-  - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_hysteria_91
-  type: hysteria
-  server: hy1.dtku47.xyz
-  port: 22334
-  auth-str: lASdKzWK0VxL
-  alpn:
-  - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_hysteria_101
-  type: hysteria
-  server: hy2.dtku47.xyz
-  port: 15566
-  auth-str: jQrGpwSqp34P
-  alpn:
-  - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_hysteria_111
-  type: hysteria
-  server: hy1.dtku47.xyz
-  port: 22334
-  auth-str: lASdKzWK0VxL
-  alpn:
-  - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_tuic_121
+- name: meta_tuic_61
   server: tuic4.dtku47.xyz
   port: 12980
   type: tuic
@@ -174,7 +114,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: false
   congestion-controller: bbr
-- name: meta_hysteria_131
+- name: meta_hysteria_71
   type: hysteria
   server: www.dtku50.xyz
   port: 43250
@@ -186,7 +126,7 @@ proxies:
   auth_str: 2S9M5Gs0pgRsaTObNghoLZx6wPkBJOGTFWvf4R06Us5hUNtfr7
   up: 2
   down: 10
-- name: meta_vless_141
+- name: meta_vless_81
   type: vless
   server: 45.150.165.87
   port: 25678
@@ -199,7 +139,7 @@ proxies:
   reality-opts:
     public-key: sJsSZcA2DyAHDTcoe8Utbz9JaXJPMVmtHmiXxWmcExc
   client-fingerprint: chrome
-- name: meta_hysteria_151
+- name: meta_hysteria_91
   type: hysteria
   server: www3.dtku49.xyz
   port: 58693
@@ -318,16 +258,10 @@ proxy-groups:
   - meta_tuic_31
   - meta_hysteria_41
   - meta_tuic_51
-  - meta_hysteria_61
+  - meta_tuic_61
   - meta_hysteria_71
-  - meta_hysteria_81
+  - meta_vless_81
   - meta_hysteria_91
-  - meta_hysteria_101
-  - meta_hysteria_111
-  - meta_tuic_121
-  - meta_hysteria_131
-  - meta_vless_141
-  - meta_hysteria_151
   - hysteria_0
   - hysteria_1
   - hysteria_2
@@ -349,16 +283,10 @@ proxy-groups:
   - meta_tuic_31
   - meta_hysteria_41
   - meta_tuic_51
-  - meta_hysteria_61
+  - meta_tuic_61
   - meta_hysteria_71
-  - meta_hysteria_81
+  - meta_vless_81
   - meta_hysteria_91
-  - meta_hysteria_101
-  - meta_hysteria_111
-  - meta_tuic_121
-  - meta_hysteria_131
-  - meta_vless_141
-  - meta_hysteria_151
   - hysteria_0
   - hysteria_1
   - hysteria_2
