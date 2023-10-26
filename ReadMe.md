@@ -2,6 +2,9 @@
 
 **注意：clash内核无法使用这些节点，你要用clashmeta**
 
+## 开启浏览器自带doh以及客户端tun模式也可绕过封锁
+
+
 ## 注意事项
 <details>
   <summary>点击展开/折叠</summary>
