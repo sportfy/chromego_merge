@@ -288,7 +288,7 @@ proxies:
 - name: hysteria2_1
   type: hysteria2
   server: 108.181.22.155
-  port: 63400
+  port: 56091
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
