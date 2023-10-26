@@ -33,66 +33,74 @@ proxies:
   udp: true
   sni: gw.alicdn.com
   skip-cert-verify: true
-- name: meta_hysteria_01
-  type: hysteria
-  server: hy2.dtku47.xyz
-  port: 15566
-  auth-str: jQrGpwSqp34P
+- name: meta_hysteria2_01
+  type: hysteria2
+  server: 109.104.152.219
+  port: 59625
+  password: dc881814
+  sni: www.bing.com
+  skip-cert-verify: true
+- name: meta_tuic_11
+  server: tuic1.freeh1.xyz
+  port: 40981
+  type: tuic
+  uuid: c2faac69-e1c1-4bf5-b8a8-d2ce4d834a66
+  password: dongtaiwang
+  sni: tuic1.freeh1.xyz
   alpn:
   - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_hysteria_11
-  type: hysteria
-  server: clash1.dtku47.xyz
-  port: 11223
-  auth-str: O5tQQiW2xKf5
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: false
+  congestion-controller: bbr
+- name: meta_tuic_21
+  server: tuic3.dtku47.xyz
+  port: 12255
+  type: tuic
+  uuid: ed6a538a-6e66-4f21-a769-4b389bb2f3ab
+  password: dongtaiwang
   alpn:
   - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_hysteria_21
-  type: hysteria
-  server: hy2.dtku47.xyz
-  port: 15566
-  auth-str: jQrGpwSqp34P
+  request-timeout: 8000
+  udp-relay-mode: native
+  congestion-controller: bbr
+- name: meta_tuic_31
+  server: 108.181.24.7
+  port: 23450
+  type: tuic
+  uuid: 3618921b-adeb-4bd3-a2a0-f98b72a674b1
+  password: dongtaiwang
+  sni: bing.com
   alpn:
   - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
-- name: meta_hysteria_31
-  type: hysteria
-  server: hy1.dtku47.xyz
-  port: 22334
-  auth-str: lASdKzWK0VxL
-  alpn:
-  - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: true
+  congestion-controller: bbr
 - name: meta_hysteria_41
   type: hysteria
-  server: hy2.dtku47.xyz
-  port: 15566
-  auth-str: jQrGpwSqp34P
+  server: www.dtku46.xyz
+  port: 11223
+  auth-str: mqoE9qSoyMFa
   alpn:
   - h3
   protocol: udp
   up: 50 Mbps
   down: 100 Mbps
-- name: meta_hysteria_51
-  type: hysteria
-  server: hy1.dtku47.xyz
-  port: 22334
-  auth-str: lASdKzWK0VxL
+  skip-cert-verify: true
+- name: meta_tuic_51
+  server: 108.181.22.205
+  port: 50987
+  type: tuic
+  uuid: d6214437-e1b5-4334-9090-8f66b78bea89
+  password: dongtaiwang
+  sni: bing.com
   alpn:
   - h3
-  protocol: udp
-  up: 50 Mbps
-  down: 100 Mbps
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: true
+  congestion-controller: bbr
 - name: meta_tuic_61
   server: tuic4.dtku47.xyz
   port: 12980
@@ -120,7 +128,7 @@ proxies:
   down: 10
 - name: meta_vless_81
   type: vless
-  server: 45.150.165.79
+  server: 45.150.165.87
   port: 25678
   udp: true
   uuid: 34f36b97-1fb7-41f3-8db4-912cc69e724a
@@ -173,10 +181,10 @@ proxies:
   - h3
 - name: hysteria_2
   type: hysteria
-  server: 167.160.91.115
-  port: 41189
-  ports: 41189
-  auth_str: bWAwIqINo7XDm1fUlXQGBifVIXoYs1ylgVKqWFKzK1XyDKuwNF
+  server: 109.104.152.149
+  port: 48406
+  ports: 48406
+  auth_str: xfNhrunYJ9GvDXCTktY2bIwhc1EyeyyAbiUMx1UtBOWgI4cMVB
   up: 80
   down: 100
   fast-open: true
@@ -199,6 +207,20 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
+- name: reality_3
+  type: vless
+  server: 109.104.152.156
+  port: 16717
+  uuid: a2971a3e-d013-47b2-93c8-2ff2a4bcff2a
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: aod.itunes.apple.com
+  reality-opts:
+    public-key: ydGuypY0EPIAxMpi8L-yhWBtjyavZbtwo9JJk2K5G0Y
+    short-id: 6ba85179e30d4fc2
 proxy-groups:
 - name: 节点选择
   type: select
@@ -206,12 +228,12 @@ proxy-groups:
   - 自动选择
   - DIRECT
   - 油管-绵阿羊
-  - meta_hysteria_01
-  - meta_hysteria_11
-  - meta_hysteria_21
-  - meta_hysteria_31
+  - meta_hysteria2_01
+  - meta_tuic_11
+  - meta_tuic_21
+  - meta_tuic_31
   - meta_hysteria_41
-  - meta_hysteria_51
+  - meta_tuic_51
   - meta_tuic_61
   - meta_hysteria_71
   - meta_vless_81
@@ -220,6 +242,7 @@ proxy-groups:
   - hysteria_1
   - hysteria_2
   - hysteria_3
+  - reality_3
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -227,12 +250,12 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 油管-绵阿羊
-  - meta_hysteria_01
-  - meta_hysteria_11
-  - meta_hysteria_21
-  - meta_hysteria_31
+  - meta_hysteria2_01
+  - meta_tuic_11
+  - meta_tuic_21
+  - meta_tuic_31
   - meta_hysteria_41
-  - meta_hysteria_51
+  - meta_tuic_51
   - meta_tuic_61
   - meta_hysteria_71
   - meta_vless_81
@@ -241,6 +264,7 @@ proxy-groups:
   - hysteria_1
   - hysteria_2
   - hysteria_3
+  - reality_3
 rules:
 - DOMAIN,clash.razord.top,DIRECT
 - DOMAIN,yacd.haishan.me,DIRECT
