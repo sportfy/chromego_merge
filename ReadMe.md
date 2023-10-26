@@ -2,14 +2,16 @@
 
 **注意：clash内核无法使用这些节点，你要用clashmeta**
 
-## 开启浏览器自带doh以及客户端tun模式也可绕过封锁
+开启浏览器自带doh以及客户端tun模式也可绕过封锁，参考：https://blog.mareep.net/posts/9993/
 
 
 ## 注意事项
 <details>
   <summary>点击展开/折叠</summary>
 1. 套上warp可以突破封锁，可以访问一些机场主不让你访问的网站
+  
 2. 套上warp可以增强隐私性，防止机场主偷看你的隐私
+
 3. 提取节点出来，方便在自己的客户端使用，第三方客户端并不能确保安全
 </details>
 
@@ -44,6 +46,12 @@ https://mareep.netlify.app/sub/merged_warp_proxies_new.yaml
 ### 通用链接 （shadowrocket和nekoray）
 ```
 https://mareep.netlify.app/sub/shadowrocket_base64.txt
+```
+
+### sing-box订阅链接
+
+```
+https://sing-box-subscribe.vercel.app/config/https:/mareep.netlify.app/sub/merged_proxies_new.yaml
 ```
 
 ## 客户端推荐
