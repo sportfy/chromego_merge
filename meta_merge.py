@@ -25,6 +25,17 @@ def process_clash(data, index):
     for i, proxy in enumerate(proxies):
         proxy['name'] = f"meta_{proxy['type']}_{index}{i+1}"
     merged_proxies.extend(proxies)
+
+#提取clash_old节点
+def process_clash_old(data, index):
+    content = yaml.safe_load(data)
+    proxies = content.get('proxies', [])
+    for i, proxy in enumerate(proxies):
+        if proxy.get('type') != 'hysteria2':
+            proxy['name'] = f"meta_{proxy['type']}_{index}{i+1}"
+            merged_proxies.append(proxy)
+
+
 # 处理sb，待办
 def process_sb(data, index):
     try:
@@ -273,7 +284,7 @@ print("聚合完成")
 merged_proxies = []
 
 # 处理 clash URLs
-process_urls('./urls/clash_urls.txt', process_clash)
+process_urls('./urls/clash_urls.txt', process_clash_old)
 
 # 处理 shadowtls URLs
 process_urls('./urls/sb_urls.txt', process_sb)
