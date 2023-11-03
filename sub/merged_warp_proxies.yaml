@@ -126,17 +126,18 @@ proxies:
   skip-cert-verify: true
   congestion-controller: bbr
 - name: meta_tuic_61
-  server: 108.181.22.239
-  port: 26789
+  server: www2.dtku49.xyz
+  port: 19881
   type: tuic
-  uuid: a6ccf4f3-2b05-48ff-b440-2e3dce3e216a
-  password: iLHa7ogC0RjF
+  uuid: 45e2b23a-1a49-49c4-9422-8d786887ef3d
+  password: 51UMpwpdw0Kw
   sni: bing.com
   alpn:
   - h3
   request-timeout: 8000
   udp-relay-mode: native
   skip-cert-verify: true
+  congestion-controller: bbr
 - name: meta_hysteria_71
   type: hysteria
   server: www.dtku50.xyz
@@ -149,20 +150,19 @@ proxies:
   auth_str: 2S9M5Gs0pgRsaTObNghoLZx6wPkBJOGTFWvf4R06Us5hUNtfr7
   up: 2
   down: 10
-- name: meta_vless_81
-  type: vless
-  server: 45.150.165.121
-  port: 10306
-  udp: true
-  uuid: 89a3befc-045b-4287-8b9f-f51c455f93be
-  tls: true
-  servername: mensura.cdn-apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: ec05-gX8GbyAZaJ72G4AWIadOsDk2_sZCDliuHZnwBc
-    short-id: 6ba85179e30d4fc2
-  client-fingerprint: chrome
+- name: meta_tuic_81
+  server: www2.dtku49.xyz
+  port: 19881
+  type: tuic
+  uuid: 45e2b23a-1a49-49c4-9422-8d786887ef3d
+  password: 51UMpwpdw0Kw
+  sni: bing.com
+  alpn:
+  - h3
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: true
+  congestion-controller: bbr
 - name: meta_hysteria_91
   type: hysteria
   server: www3.dtku49.xyz
@@ -276,7 +276,7 @@ proxy-groups:
   - meta_tuic_51
   - meta_tuic_61
   - meta_hysteria_71
-  - meta_vless_81
+  - meta_tuic_81
   - meta_hysteria_91
   - hysteria_0
   - hysteria_1
@@ -295,7 +295,7 @@ proxy-groups:
   - meta_tuic_51
   - meta_tuic_61
   - meta_hysteria_71
-  - meta_vless_81
+  - meta_tuic_81
   - meta_hysteria_91
   - hysteria_0
   - hysteria_1
@@ -314,7 +314,7 @@ proxy-groups:
   - meta_tuic_51
   - meta_tuic_61
   - meta_hysteria_71
-  - meta_vless_81
+  - meta_tuic_81
   - meta_hysteria_91
   - hysteria_0
   - hysteria_1
